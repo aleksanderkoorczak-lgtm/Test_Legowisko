@@ -3,24 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comfond | Ekskluzywne Legowiska dla Psów</title>
-    <!-- Google Fonts -->
+    <title>Comfond | Wyznacznik Luksusu dla Twojego Psa</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <!-- AOS Library dla animacji -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         :root {
             --gold: #d4af37;
             --dark: #121212;
             --light: #fdfdfd;
-            --gray: #888;
             --overlay: rgba(0, 0, 0, 0.85);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         body { font-family: 'Lato', sans-serif; background-color: var(--light); color: var(--dark); line-height: 1.6; overflow-x: hidden; }
 
-        /* --- Nawigacja --- */
         header { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.98); z-index: 1000; border-bottom: 1px solid #eee; }
         nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
         .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; letter-spacing: 3px; color: var(--dark); text-decoration: none; }
@@ -29,20 +25,16 @@
         .nav-links a { text-decoration: none; color: var(--dark); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1.5px; transition: 0.3s; }
         .nav-links a:hover { color: var(--gold); }
 
-        /* --- Hero --- */
-        .hero { height: 100vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?q=80&w=1600') center/cover; display: flex; align-items: center; justify-content: center; color: white; text-align: center; }
+        .hero { height: 100vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.pexels.com/photos/825947/pexels-photo-825947.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover; display: flex; align-items: center; justify-content: center; color: white; text-align: center; }
         .hero h1 { font-family: 'Playfair Display', serif; font-size: 4.5rem; margin-bottom: 10px; letter-spacing: 5px; }
         .hero p { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 6px; color: var(--gold); }
 
-        /* --- Sekcje --- */
         section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; }
         h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; text-align: center; margin-bottom: 50px; }
         h2::after { content: ''; display: block; width: 60px; height: 2px; background: var(--gold); margin: 20px auto; }
 
-        /* --- O Nas --- */
         .about-content { max-width: 800px; margin: 0 auto; text-align: center; font-style: italic; color: #444; font-size: 1.2rem; }
 
-        /* --- Katalog --- */
         .catalog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
         .product-card { background: #fff; padding: 25px; border: 1px solid #f0f0f0; transition: 0.4s; text-align: center; border-radius: 4px; }
         .product-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
@@ -53,9 +45,7 @@
         .btn { padding: 12px 25px; text-decoration: none; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1px; transition: 0.3s; cursor: pointer; border: none; }
         .btn-dark { background: var(--dark); color: white; }
         .btn-gold { background: var(--gold); color: white; }
-        .btn:hover { opacity: 0.8; }
 
-        /* --- Modal --- */
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: var(--overlay); overflow-y: auto; }
         .modal-content { background: #fff; margin: 5% auto; padding: 40px; width: 90%; max-width: 1000px; position: relative; animation: slideDown 0.5s; border-radius: 4px; }
         @keyframes slideDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
@@ -65,26 +55,14 @@
         .modal-images img { width: 100%; height: 180px; object-fit: cover; border-radius: 2px; }
         .modal-images img.main { grid-column: span 2; height: 400px; }
         .modal-text { flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center; }
-        .modal-text h2 { text-align: left; margin-bottom: 20px; font-size: 2.2rem; }
-        .modal-text h2::after { margin: 10px 0; }
 
-        /* --- Opinie --- */
         .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
         .review-card { padding: 30px; background: white; border: 1px solid #eee; text-align: center; border-radius: 5px; }
         .rev-img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 2px solid var(--gold); }
         .stars { color: var(--gold); margin-bottom: 10px; font-size: 1.2rem; }
 
-        /* --- Regulamin --- */
-        .reg-box { background: #f9f9f9; padding: 40px; font-size: 0.95rem; border-left: 5px solid var(--gold); line-height: 2; }
-
         footer { background: var(--dark); color: white; padding: 60px 20px; text-align: center; }
-        .footer-logo { font-family: 'Playfair Display', serif; font-size: 2rem; letter-spacing: 3px; margin-bottom: 20px; }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .modal-content { padding: 20px; width: 95%; }
-            .nav-links { display: none; }
-        }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .nav-links { display: none; } }
     </style>
 </head>
 <body>
@@ -101,7 +79,6 @@
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
     <section class="hero">
         <div data-aos="zoom-out" data-aos-duration="2000">
             <h1>COMFOND</h1>
@@ -109,201 +86,159 @@
         </div>
     </section>
 
-    <!-- O NAS SECTION -->
     <section id="about" data-aos="fade-up">
         <h2>O Nas</h2>
         <div class="about-content">
-            <p>Marka Comfond zrodziła się z pasji, której początki sięgają skromnych, domowych pieleszy. Zaczynaliśmy w warunkach chałupniczych, gdzie każde przeszycie i każdy wybór tkaniny był osobistym manifestem miłości do zwierząt. Dzisiaj, choć staliśmy się symbolem luksusu, nasza filozofia pozostaje niezmienna: stale się rozwijamy, łącząc tradycyjne rzemiosło z nowoczesnym designem, aby dostarczać legowiska, które są czymś więcej niż tylko meblem – są obietnicą najgłębszego spokoju dla Twojego psa.</p>
+            <p>Marka Comfond zrodziła się z pasji w domowym zaciszu. Zaczynaliśmy w warunkach chałupniczych, gdzie każde przeszycie było manifestem miłości do zwierząt. Dzisiaj, jako symbol luksusu, stale się rozwijamy, dostarczając legowiska, które są obietnicą spokoju dla Twojego psa.</p>
         </div>
     </section>
 
-    <!-- KATALOG PRODUKTÓW (Posortowany) -->
     <section id="catalog">
-        <h2>Kolekcja Wyjątkowości</h2>
+        <h2>Katalog Kolekcji</h2>
         <div class="catalog-grid">
             
-            <!-- Produkt 1: 199 PLN -->
+            <!-- 199 PLN - York -->
             <div class="product-card" data-aos="fade-up">
-                <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=800" class="product-img" alt="York Petite">
+                <img src="https://images.pexels.com/photos/1490908/pexels-photo-1490908.jpeg?auto=compress&cs=tinysrgb&w=800" class="product-img" alt="York Petite">
                 <div class="product-info">
                     <h3>York Petite 40x40</h3>
                     <p>Luksus skrojony pod potrzeby Yorka</p>
                     <p class="price">199,00 PLN</p>
                     <div class="btn-group">
                         <button class="btn btn-gold" onclick="openModal('modalB')">Szczegóły</button>
-                        <a href="https://buy.stripe.com/demo199" class="btn btn-dark">Kup Teraz</a>
+                        <a href="https://buy.stripe.com/demo1" class="btn btn-dark">Kup Teraz</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Produkt 2: 299 PLN -->
+            <!-- 299 PLN - Średni -->
             <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-                <img src="https://images.unsplash.com/photo-1544568100-8459e605174b?q=80&w=800" class="product-img" alt="Royal Comfort">
+                <img src="https://images.pexels.com/photos/101631/pexels-photo-101631.jpeg?auto=compress&cs=tinysrgb&w=800" class="product-img" alt="Royal Comfort">
                 <div class="product-info">
                     <h3>Royal Comfort 80x80</h3>
                     <p>Idealne dla średniej rasy psów</p>
                     <p class="price">299,00 PLN</p>
                     <div class="btn-group">
                         <button class="btn btn-gold" onclick="openModal('modalA')">Szczegóły</button>
-                        <a href="https://buy.stripe.com/demo299" class="btn btn-dark">Kup Teraz</a>
+                        <a href="https://buy.stripe.com/demo2" class="btn btn-dark">Kup Teraz</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Produkt 3: 399 PLN -->
+            <!-- 399 PLN - Duży -->
             <div class="product-card" data-aos="fade-up" data-aos-delay="200">
-                <img src="https://images.unsplash.com/photo-1554692942-0f04771485c2?q=80&w=800" class="product-img" alt="Imperial Estate">
+                <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=800" class="product-img" alt="Imperial Estate">
                 <div class="product-info">
                     <h3>Imperial Estate 120x120</h3>
                     <p>Dla dużych ras: Labrador, Owczarek</p>
                     <p class="price">399,00 PLN</p>
                     <div class="btn-group">
                         <button class="btn btn-gold" onclick="openModal('modalC')">Szczegóły</button>
-                        <a href="https://buy.stripe.com/demo399" class="btn btn-dark">Kup Teraz</a>
+                        <a href="https://buy.stripe.com/demo3" class="btn btn-dark">Kup Teraz</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MODAL 199 PLN -->
+    <!-- MODAL 199 -->
     <div id="modalB" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modalB')">&times;</span>
             <div class="modal-flex">
                 <div class="modal-images">
-                    <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=800" class="main">
-                    <img src="https://images.unsplash.com/photo-1591393223703-56fe1347ac62?q=80&w=400">
-                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=400">
+                    <img src="https://images.pexels.com/photos/1490908/pexels-photo-1490908.jpeg?auto=compress&cs=tinysrgb&w=800" class="main">
+                    <img src="https://images.pexels.com/photos/58997/pexels-photo-58997.jpeg?auto=compress&cs=tinysrgb&w=400">
+                    <img src="https://images.pexels.com/photos/1564506/pexels-photo-1564506.jpeg?auto=compress&cs=tinysrgb&w=400">
                 </div>
                 <div class="modal-text">
                     <h2>York Petite</h2>
-                    <p>Kompaktowe arcydzieło stworzone z myślą o najmniejszych czworonogach. Miękkie brzegi i hipoalergiczne wypełnienie dają poczucie maksymalnego bezpieczeństwa.</p>
-                    <ul style="margin: 20px 0; padding-left: 20px;">
-                        <li>Wymiary: 40 x 40 cm</li>
-                        <li>Materiał: Velvet Premium</li>
-                        <li>Antypoślizgowy spód</li>
-                    </ul>
+                    <p>Prawdziwa oaza miękkości dla najmniejszych towarzyszy. Velvetowa tkanina odporna na drapanie.</p>
                     <p class="price">199,00 PLN</p>
-                    <a href="https://buy.stripe.com/demo199" class="btn btn-dark">Dodaj do koszyka</a>
+                    <a href="https://buy.stripe.com/demo1" class="btn btn-dark">Zamów teraz</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- MODAL 299 PLN -->
+    <!-- MODAL 299 -->
     <div id="modalA" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modalA')">&times;</span>
             <div class="modal-flex">
                 <div class="modal-images">
-                    <img src="https://images.unsplash.com/photo-1544568100-8459e605174b?q=80&w=800" class="main">
-                    <img src="https://images.unsplash.com/photo-1541599540903-216a46ca1df0?q=80&w=400">
-                    <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?q=80&w=400">
+                    <img src="https://images.pexels.com/photos/101631/pexels-photo-101631.jpeg?auto=compress&cs=tinysrgb&w=800" class="main">
+                    <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=400">
+                    <img src="https://images.pexels.com/photos/4587994/pexels-photo-4587994.jpeg?auto=compress&cs=tinysrgb&w=400">
                 </div>
                 <div class="modal-text">
                     <h2>Royal Comfort</h2>
-                    <p>Złoty standard dla psów średniej wielkości. Zastosowana technologia pianki ortopedycznej sprawia, że legowisko dopasowuje się do ciała psa, dbając o jego kręgosłup.</p>
-                    <ul style="margin: 20px 0; padding-left: 20px;">
-                        <li>Wymiary: 80 x 80 cm</li>
-                        <li>Wypełnienie: Memory Foam</li>
-                        <li>Wykończenie złotą nicią</li>
-                    </ul>
+                    <p>Zastosowana pianka Memory Foam idealnie dopasowuje się do sylwetki psa o średniej wadze.</p>
                     <p class="price">299,00 PLN</p>
-                    <a href="https://buy.stripe.com/demo299" class="btn btn-dark">Dodaj do koszyka</a>
+                    <a href="https://buy.stripe.com/demo2" class="btn btn-dark">Zamów teraz</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- MODAL 399 PLN -->
+    <!-- MODAL 399 -->
     <div id="modalC" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modalC')">&times;</span>
             <div class="modal-flex">
                 <div class="modal-images">
-                    <img src="https://images.unsplash.com/photo-1554692942-0f04771485c2?q=80&w=800" class="main">
-                    <img src="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?q=80&w=400">
-                    <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=400">
+                    <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=800" class="main">
+                    <img src="https://images.pexels.com/photos/164186/pexels-photo-164186.jpeg?auto=compress&cs=tinysrgb&w=400">
+                    <img src="https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400">
                 </div>
                 <div class="modal-text">
                     <h2>Imperial Estate</h2>
-                    <p>Prawdziwa rezydencja dla największych psów. Wzmocniona konstrukcja i ogromna powierzchnia spania gwarantują komfort nawet dla psów ras olbrzymich.</p>
-                    <ul style="margin: 20px 0; padding-left: 20px;">
-                        <li>Wymiary: 120 x 120 cm</li>
-                        <li>Wzmocnione szwy "Heavy-Duty"</li>
-                        <li>Łatwo zdejmowalny pokrowiec</li>
-                    </ul>
+                    <p>Maksymalna przestrzeń dla Labradorów i Owczarków. Wzmocnione szwy gwarantują trwałość na lata.</p>
                     <p class="price">399,00 PLN</p>
-                    <a href="https://buy.stripe.com/demo399" class="btn btn-dark">Dodaj do koszyka</a>
+                    <a href="https://buy.stripe.com/demo3" class="btn btn-dark">Zamów teraz</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- OPINIE SECTION -->
     <section id="reviews" data-aos="fade-up">
         <h2>Głosy naszych Klientów</h2>
         <div class="reviews-grid">
             <div class="review-card">
                 <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rev-img">
                 <div class="stars">★★★★★</div>
-                <p>"Najwyższa jakość, jaką widziałam. Moja suczka od razu pokochała swoje nowe Royal Comfort. Wygląda obłędnie w sypialni!"</p>
-                <p><strong>- Anna Kowalska</strong></p>
+                <p>"Mój pies w końcu śpi całą noc. Jakość materiałów Comfond jest niesamowita!"</p>
+                <p><strong>- Anna K.</strong></p>
             </div>
             <div class="review-card">
                 <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rev-img">
                 <div class="stars">★★★★★</div>
-                <p>"Mam Labradora, który niszczył każde legowisko. Imperial Estate wytrzymuje wszystko, a on w końcu śpi całą noc."</p>
-                <p><strong>- Jan Nowak</strong></p>
-            </div>
-            <div class="review-card">
-                <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rev-img">
-                <div class="stars">★★★★★</div>
-                <p>"Cudowny kontakt z obsługą i produkt, który naprawdę jest premium. Czuć, że Comfond dba o każdy detal."</p>
-                <p><strong>- Magdalena S.</strong></p>
+                <p>"Wygląda obłędnie w salonie. Każdy gość pyta, skąd mamy takie legowisko."</p>
+                <p><strong>- Piotr W.</strong></p>
             </div>
         </div>
     </section>
 
-    <!-- REGULAMIN SECTION -->
     <section id="terms" data-aos="fade-up">
-        <h2>Regulamin Manufaktury</h2>
-        <div class="reg-box">
-            <p>1. Każdy produkt marki Comfond tworzony jest z dbałością o najwyższe standardy jakości.<br>
-            2. Czas realizacji zamówienia na produkty rzemieślnicze wynosi od 3 do 5 dni roboczych.<br>
-            3. Klient ma prawo do zwrotu produktu w ciągu 14 dni, o ile nie nosi on śladów użytkowania przez czworonoga.<br>
-            4. Wszystkie ceny są wyrażone w PLN i zawierają podatek VAT.<br>
-            5. Gwarantujemy pełne bezpieczeństwo transakcji oraz dyskrecję Twoich danych.</p>
+        <h2>Regulamin</h2>
+        <div style="background:#f9f9f9; padding:40px; border-left:5px solid var(--gold);">
+            <p>1. Czas dostawy: 3-5 dni roboczych.<br>
+            2. Gwarancja luksusu: 24 miesiące.<br>
+            3. Zwrot w ciągu 14 dni bez pytań.</p>
         </div>
     </section>
 
     <footer>
         <div class="footer-logo">COMFOND</div>
-        <p>&copy; 2026 Comfond Luxury Manufaktura. Wszelkie prawa zastrzeżone.</p>
+        <p>&copy; 2026 Comfond Luxury Manufaktura.</p>
     </footer>
 
-    <!-- Skrypty -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true });
-
-        function openModal(id) {
-            document.getElementById(id).style.display = "block";
-            document.body.style.overflow = "hidden";
-        }
-
-        function closeModal(id) {
-            document.getElementById(id).style.display = "none";
-            document.body.style.overflow = "auto";
-        }
-
-        window.onclick = function(event) {
-            if (event.target.className === 'modal') {
-                event.target.style.display = "none";
-                document.body.style.overflow = "auto";
-            }
-        }
+        AOS.init();
+        function openModal(id) { document.getElementById(id).style.display = "block"; document.body.style.overflow = "hidden"; }
+        function closeModal(id) { document.getElementById(id).style.display = "none"; document.body.style.overflow = "auto"; }
+        window.onclick = function(e) { if (e.target.className === 'modal') { e.target.style.display = "none"; document.body.style.overflow = "auto"; } }
     </script>
 </body>
 </html>
